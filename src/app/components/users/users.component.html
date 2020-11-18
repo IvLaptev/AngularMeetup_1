@@ -1,0 +1,13 @@
+<h1>Users</h1>
+
+<input type="text" [(ngModel)]="user.username"><br>
+<input type="text" [(ngModel)]="user.password"><br>
+<input type="text" [(ngModel)]="user.email"><br>
+<button (click)="addUser(user)">Add</button>
+
+<div *ngFor="let user of users">
+  <h3>{{user.id}}</h3>
+  <div>Username: {{user.username}}</div>
+  <div>Password: {{user.password}}</div>
+  <div>Email: {{user.email}}</div>
+</div>

@@ -1,0 +1,13 @@
+<input type="checkbox" [(ngModel)]="isShowing">
+
+<h1>Messages</h1>
+
+<div *ngIf="isShowing; else notShowing">
+  <input type="text" [(ngModel)]="message"><br>
+  <button (click)="exampleService.addMessage(message)">Add</button>
+
+  <h4 *ngFor="let message of exampleService.getMessages(); let i = index">{{i}}. {{message}}</h4>
+</div>
+<ng-template #notShowing>
+  <h4>Messages are hidden</h4>
+</ng-template>
